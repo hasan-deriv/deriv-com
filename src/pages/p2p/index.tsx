@@ -65,7 +65,8 @@ const derivP2PPortalData = {
 const DP2PHome = () => {
     const [is_mounted] = usePageLoaded() // needed to fix the second Hero-component during page's loadin
     const { is_p2p_allowed_country } = useRegion()
-    if (is_p2p_allowed_country) {
+    // eslint-disable-next-line no-constant-condition
+    if (true) {
         return (
             <Layout>
                 <SEO
@@ -78,14 +79,14 @@ const DP2PHome = () => {
                 {is_mounted && (
                     <>
                         <Hero />
-                        <DP2P reverse P2P={DP2P_CONTENT} />
+                        {/* <DP2P reverse P2P={DP2P_CONTENT} />
                         <Numbers />
                         <ExchangeSteps />
                         <Availability />
                         <P2PBanner
                             title={localize('Make hassle-free deposits and withdrawals today')}
                         />
-                        <Roadmap portal={derivP2PPortalData} />
+                        <Roadmap portal={derivP2PPortalData} /> */}
                     </>
                 )}
             </Layout>

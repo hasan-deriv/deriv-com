@@ -28,6 +28,7 @@ type CommonHeaderSectionProps = {
     font_weight_subtitle?: string
     font_family_title?: string
     font_family_subtitle?: string
+    line_height_subtitle?: string
 }
 
 const StyledCommonHeaderSection = styled.div<CommonHeaderSectionProps>`
@@ -80,6 +81,7 @@ const CommonHeaderSection = ({
     height,
     align_title,
     align_subtitle,
+    line_height_subtitle,
 }: CommonHeaderSectionProps) => {
     return (
         <StyledCommonHeaderSection
@@ -109,7 +111,7 @@ const CommonHeaderSection = ({
                         subtitle_font_size={subtitle_font_size}
                         margin_subtitle={margin_subtitle}
                         align_subtitle={align_subtitle}
-                        line_height={line_height}
+                        line_height={line_height_subtitle || line_height}
                         font_weight_subtitle={font_weight_subtitle}
                         font_family_subtitle={font_family_subtitle}
                     >
