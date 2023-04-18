@@ -79,8 +79,9 @@ const DP2PHome = () => {
                 {is_mounted && (
                     <>
                         <Hero />
-                        {/* <DP2P reverse P2P={DP2P_CONTENT} />
                         <Numbers />
+                        {/* <DP2P reverse P2P={DP2P_CONTENT} />
+                        
                         <ExchangeSteps />
                         <Availability />
                         <P2PBanner
