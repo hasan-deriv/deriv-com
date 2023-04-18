@@ -109,7 +109,7 @@ const DCommonBanner = () => {
                             line_height="1.25"
                             line_height_subtitle="1.5"
                             margin_title="0 0 8px"
-                            color="#414652"
+                            color="var(--color-black-9)"
                         />
                     </Content>
                 </ContentWrapperStyle>
