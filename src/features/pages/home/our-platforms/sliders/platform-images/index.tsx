@@ -1,5 +1,5 @@
 import React from 'react'
-import { Autoplay, Controller, EffectFade } from 'swiper'
+import { Autoplay, Controller, EffectFade, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
 import { SmartPlatformItem } from '../../types'
@@ -27,9 +27,13 @@ const PlatformImageSlider = ({ items, setSwiper, connectedSwiper }: PlatformMain
                 control: connectedSwiper,
             }}
             dir={get_lang_direction()}
-            modules={[Controller, EffectFade, Autoplay]}
-            autoplay={{
-                delay: 3000,
+            modules={[Controller, EffectFade, Autoplay, Pagination]}
+            autoplay={false}
+            pagination={{ clickable: true }}
+            breakpoints={{
+                768: {
+                    pagination: false,
+                },
             }}
             className={platform_images_swiper}
         >
