@@ -11,15 +11,16 @@
 }
 .selected_zone{
     position:absolute;
-    max-height: 152px;
+    height: 152px;
     left: 0;
     right: 0;
-    box-shadow: rgba(131, 131, 131, 0.15) 0 16px 20px, rgba(131, 131, 131, 0.15) 0 0 20px;
     top: calc(50% - 152px / 2);
+    box-shadow: rgba(131, 131, 131, 0.15) 0 16px 20px, rgba(131, 131, 131, 0.15) 0 0 20px;
     z-index: 4;
     background-color: white;
     padding: 16px;
 }
+
 .view_port{
     position: relative;
     user-select: none;
@@ -32,10 +33,11 @@
 }
 .slide{
     text-align: center;
-    align-items: center;
     cursor: pointer;
     backface-visibility: hidden;
     margin-bottom: 40px;
+    inline-size: 100%;
+    block-size: 100%;
 }
 .scene{
     min-width: 100%;
