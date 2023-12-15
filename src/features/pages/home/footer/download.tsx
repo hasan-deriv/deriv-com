@@ -15,6 +15,16 @@ const sharedClasses =
 const DownloadBadges = () => {
     return (
         <div className="flex flex-col gap-gap-md max-lg:flex-1">
+            <div className={clsx(sharedClasses, 'order-last')}>
+                <LabelPairedHuaweiAppGalleryIcon iconSize="md" />
+                <StaticImage
+                    src="../../../../images/common/migration/footer/explore-appgallery.png"
+                    alt={localize('_t_explore it on appgallery_t_')}
+                    formats={['webp', 'auto']}
+                    width={90}
+                    placeholder="none"
+                />
+            </div>
             <div className={clsx(sharedClasses)}>
                 <LabelPairedGooglePlayIcon iconSize="md" />
                 <StaticImage
@@ -30,16 +40,6 @@ const DownloadBadges = () => {
                 <StaticImage
                     src="../../../../images/common/migration/footer/download-appstore.png"
                     alt={localize('_t_download on the app store_t_')}
-                    formats={['webp', 'auto']}
-                    width={90}
-                    placeholder="none"
-                />
-            </div>
-            <div className={clsx(sharedClasses)}>
-                <LabelPairedHuaweiAppGalleryIcon iconSize="md" />
-                <StaticImage
-                    src="../../../../images/common/migration/footer/explore-appgallery.png"
-                    alt={localize('_t_explore it on appgallery_t_')}
                     formats={['webp', 'auto']}
                     width={90}
                     placeholder="none"
