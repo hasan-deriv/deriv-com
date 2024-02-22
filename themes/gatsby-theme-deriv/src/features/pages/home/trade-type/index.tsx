@@ -12,7 +12,6 @@ const TradeTypeSection = () => {
         ) : (
             <Localize translate_text="_t_Trade CFDs, options, and multipliers_t_" />
         )
-        
     return (
         <Features.Card
             hasPadding

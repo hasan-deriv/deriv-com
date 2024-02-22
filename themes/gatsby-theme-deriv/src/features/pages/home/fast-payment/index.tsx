@@ -4,7 +4,6 @@ import { EUPaymentMethods, RowPaymentMethods } from './data'
 import { Localize } from 'components/localization'
 import useIsInViewport from 'components/hooks/use-is-in-viewport'
 import useBuildVariant from 'features/hooks/use-build-variant'
-
 const FastPaymentSection: React.FC = () => {
     const ref = useRef<HTMLDivElement>(null)
     const is_in_viewport = useIsInViewport(ref)
@@ -15,7 +14,6 @@ const FastPaymentSection: React.FC = () => {
             ? '!animate-[40s_slide_linear_infinite] rtl:!animate-[40s_slideRtl_linear_infinite]'
             : '!animate-[100s_slide_linear_infinite] rtl:!animate-[100s_slideRtl_linear_infinite]'
         : ''
-        
     return (
         <div ref={ref}>
             <FastPayment

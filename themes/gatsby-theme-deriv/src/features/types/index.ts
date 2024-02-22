@@ -157,10 +157,6 @@ export type TPageContext = {
     region: BuildVariantContextType['region']
 }
 
-export type BuildVariantType = {
-    region: BuildVariantContextType['region']
-}
-
 export type TGatsbyHead = HeadProps<object, TPageContext>
 
 export type IconType = {

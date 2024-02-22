@@ -6,7 +6,7 @@ import TradersHubCtaButton from 'features/components/molecules/traders-hub-cta-b
 import useBuildVariant from 'features/hooks/use-build-variant'
 
 const StartTradingSteps = () => {
-    const {region} = useBuildVariant()
+    const { region } = useBuildVariant()
 
     return (
         <Features.Card
@@ -20,7 +20,7 @@ const StartTradingSteps = () => {
             }
             cols="three"
             variant="ContentTop"
-            cards={region === "eu" ? EUCards : RowCards}
+            cards={region === 'eu' ? EUCards : RowCards}
         />
     )
 }

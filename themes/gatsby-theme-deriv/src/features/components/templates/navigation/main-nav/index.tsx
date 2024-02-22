@@ -6,13 +6,13 @@ import { mainEuNavItems, mainRowNavItems } from './data'
 import useBuildVariant from 'features/hooks/use-build-variant'
 
 const MainRowNavigation = () => {
-    const {region} = useBuildVariant()
+    const { region } = useBuildVariant()
 
     return (
         <NavigationBlock
             renderButtons={MainNavigationButtons}
             renderLogo={MainNavigationLogo}
-            items={region === "row" ? mainRowNavItems : mainEuNavItems}
+            items={region === 'eu' ? mainEuNavItems : mainRowNavItems}
         />
     )
 }

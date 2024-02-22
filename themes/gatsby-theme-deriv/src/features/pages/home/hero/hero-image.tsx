@@ -6,7 +6,6 @@ import useBuildVariant from 'features/hooks/use-build-variant'
 
 const HeroImage = () => {
     const { region } = useBuildVariant()
-    
     if (region === 'row') {
         return (
             <div className={clsx('absolute inset-50 flex items-end -z-10', hero_img)}>
