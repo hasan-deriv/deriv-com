@@ -6,6 +6,7 @@ import { TGatsbyHead } from 'features/types'
 
 const ETFMarketPage = ({pageContext}: TGatsbyHead) => {
     const {region} = pageContext
+    console.log('region ==>>>', region)
     return <ETFMarket region={region}/>
 }
 

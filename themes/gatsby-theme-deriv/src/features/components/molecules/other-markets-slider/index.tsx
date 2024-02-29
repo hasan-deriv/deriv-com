@@ -25,11 +25,13 @@ const OtherMarketsSlider = ({
     available_markets = null,
 }: OtherMarketSliderProps) => {
     const { region } = useBuildVariant()
+    const { is_eu } = useRegion()
+    console.log("region ==",region)
     const slider_items = useDynamicVisibleContent({
         content: available_markets || other_markets_items,
         config: {
             current_market: (market_page) => market_page !== current_market,
-            is_eu: (item_is_eu) => item_is_eu === undefined || (region === "eu") === item_is_eu,
+            is_eu: (item_is_eu) => item_is_eu === undefined || (region === 'eu') === item_is_eu,
         },
     })
     const is_no_linkAvailable = !!available_markets?.length
