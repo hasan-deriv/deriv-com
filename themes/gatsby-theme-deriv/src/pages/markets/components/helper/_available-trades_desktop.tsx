@@ -202,6 +202,9 @@ const AvailableTradesDesktop = ({
     display_title,
 }: AvailableTradesProps) => {
     const { region } = useBuildVariant()
+    console.log("region inside ==", region)
+    const [tab, setTab] = useState('cfds')
+    const params = new URLSearchParams(isBrowser() && location.search)
     const [tab, setTab] = useState('cfds')
     const params = new URLSearchParams(isBrowser() && location.search)
     const show_digital_options = region === 'row' ? true : false
@@ -209,6 +212,10 @@ const AvailableTradesDesktop = ({
     useEffect(() => {
         setTab(params.get('tab') || 'cfds')
     }, [params])
+
+    useEffect(() => {
+        if (region === 'eu') setShowDigitalOptions(false)
+    }, [region])
 
     const { is_deriv_go } = usePlatformQueryParam()
 

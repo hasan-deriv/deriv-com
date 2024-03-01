@@ -25,8 +25,6 @@ const OtherMarketsSlider = ({
     available_markets = null,
 }: OtherMarketSliderProps) => {
     const { region } = useBuildVariant()
-    const { is_eu } = useRegion()
-    console.log("region ==",region)
     const slider_items = useDynamicVisibleContent({
         content: available_markets || other_markets_items,
         config: {

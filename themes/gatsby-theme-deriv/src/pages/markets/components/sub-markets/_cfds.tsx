@@ -6,6 +6,7 @@ import MarketInstruments from '../sections/_market_instruments'
 import { SectionContainer } from 'components/containers'
 import { Localize } from 'components/localization'
 import device from 'themes/device'
+import useRegion from 'components/hooks/use-region'
 import { Header } from 'components/elements'
 import { TMarketContent } from 'pages/markets/static/content/_types'
 import { TString } from 'types/generics'
@@ -30,26 +31,34 @@ interface TextsType {
 }
 
 const CFDs = ({ market_content }: CFDProps) => {
+    const { is_eu } = useRegion()
     const { region } = useBuildVariant()
-    const texts:TextsType = region === 'eu' ? {
-        first: '_t_CFD trading allows you to make a potential profit from the price movement of the underlying asset without purchasing it._t_',
-        second: '_t_On Deriv, trading CFDs on leverage lets you pay only a small fraction of the contract’s value and amplify your potential profit, similarly increasing your potential loss._t_',
-    }:
-    {
+
+    const [texts, setTexts] = useState<TextsType>({
         first: '_t_CFD trading allows you to trade on the price movement of an asset without buying or owning the underlying asset._t_',
         second: '_t_On Deriv, you can trade CFDs with high leverage, enabling you to pay just a fraction of the contract’s value. It will amplify your potential gain and also increase your potential loss._t_',
-    }
-    const platforms = region === 'eu' ? {
-        dmt5: true,
-        derivx: false,
-        deriv_ez: false,
-        deriv_ctrader: false,
-    }:{
+    })
+    const [platforms, setPlatforms] = useState({
         dmt5: true,
         derivx: true,
         deriv_ez: true,
         deriv_ctrader: true,
-    }
+    })
+
+    useEffect(() => {
+        if (region === 'eu') {
+            setTexts({
+                first: '_t_CFD trading allows you to make a potential profit from the price movement of the underlying asset without purchasing it._t_',
+                second: '_t_On Deriv, trading CFDs on leverage lets you pay only a small fraction of the contract’s value and amplify your potential profit, similarly increasing your potential loss._t_',
+            })
+            setPlatforms({
+                dmt5: true,
+                derivx: false,
+                deriv_ez: false,
+                deriv_ctrader: false,
+            })
+        }
+    }, [region])
 
     return (
         <StyledSection padding="4rem 0 8rem">

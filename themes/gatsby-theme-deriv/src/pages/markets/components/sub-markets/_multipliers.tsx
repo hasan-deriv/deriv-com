@@ -14,8 +14,12 @@ type MultipliersProps = {
 }
 
 const Multipliers = ({ market_content }: MultipliersProps) => {
+    const [show_eu_content, setShowEuContent] = useState(false)
     const { region } = useBuildVariant()
-    const show_eu_content = region === 'eu' ? true : false
+
+    useEffect(() => {
+        if (region === 'eu') setShowEuContent(true)
+    }, [region])
 
     return (
         <SectionContainer padding="4rem 0 8rem">

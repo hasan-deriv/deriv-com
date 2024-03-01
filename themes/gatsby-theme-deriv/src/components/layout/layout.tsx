@@ -36,7 +36,7 @@ type LayoutProps = {
     padding_top?: string
     type?: string
     show_footer?: boolean
-    region: BuildVariantContextType['region']
+    region?: BuildVariantContextType['region'],
 }
 
 type MainType = {
