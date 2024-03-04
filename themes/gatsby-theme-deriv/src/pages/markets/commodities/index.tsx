@@ -9,10 +9,18 @@ import { SEO } from 'components/containers'
 import { TGatsbyHead } from 'features/types'
 
 const CommoditiesPage = ({pageContext}: TGatsbyHead) => {
+    const { is_eu } = useRegion()
     const {region} = pageContext
-    const description = region === 'eu'?
-    '_t_Trade popular assets in the commodities market such as silver, gold, oil, and more without owning the underlying asset. Speculate on the price movements and benefit from our competitive spreads._t_':
-    '_t_Trade popular assets in the commodities market such as silver, gold, oil, and more without owning the underlying asset. Speculate on the price movements and benefit from our high leverage and competitive spreads._t_'
+    const [description, setDescription] = useState<TString>(
+        '_t_Trade popular assets in the commodities market such as silver, gold, oil, and more without owning the underlying asset. Speculate on the price movements and benefit from our high leverage and competitive spreads._t_',
+    )
+
+    useEffect(() => {
+        if (region === 'eu')
+            setDescription(
+                '_t_Trade popular assets in the commodities market such as silver, gold, oil, and more without owning the underlying asset. Speculate on the price movements and benefit from our competitive spreads._t_',
+            )
+    }, [region])
 
     return (
         <Layout type="noNav" padding_top="0" region={region}>

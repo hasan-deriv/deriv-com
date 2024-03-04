@@ -123,7 +123,11 @@ const NavTab = ({ route_from }: TNavTab) => {
     const ref = useRef(null)
     const { is_deriv_go } = usePlatformQueryParam()
     const { region } = useBuildVariant()
-    const tabs = region === 'eu' ? tab_list_eu : tab_list
+    const [tabs, setTabs] = useState(tab_list)
+
+    useEffect(() => {
+        if (region === 'eu') setTabs(tab_list_eu)
+    }, [region])
 
     return (
         <TabsContainer>
