@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import useRegion from './use-region'
 import usePpc from 'features/hooks/use-ppc'
 import useBuildVariant from 'features/hooks/use-build-variant'
@@ -14,13 +14,6 @@ export const useShowCfdBanner = () => {
             setShowBanner(true)
         }
     }, [is_ppc, is_cpa_plan])
-
-    useLayoutEffect(() => {
-        const rootElement = document.querySelector<HTMLElement>(':root')
-        if(show_banner){
-            rootElement.classList.add("has-cfd-banner")
-        }
-    }, [show_banner])
 
     return show_banner
 }
