@@ -21,10 +21,10 @@ const WarningText = ({ loss_percent }: TextProps) => {
     useEffect(() => {
         const { clientHeight } = ref?.current
         const rootElement = document.querySelector<HTMLElement>(':root')
-        rootElement.style.setProperty('--banner-height', `${clientHeight}px`)
-        if(!isExpand){
-            rootElement.style.setProperty('--hero-offset', `${clientHeight + 80 + 56}px`) // 80 is header height and 56 is trustpilot height
-        }
+        // rootElement.style.setProperty('--banner-height', `${clientHeight}px`)
+        // if(!isExpand){
+        //     rootElement.style.setProperty('--hero-offset', `${clientHeight + 80 + 56}px`) // 80 is header height and 56 is trustpilot height
+        // }
     }, [isExpand, width])
 
     return (
